@@ -1,4 +1,4 @@
-# QuickChat - PROG5121 Part 3 (Store Data and Display Task Report)
+# ST10489452 - PROG5121 Part 3 (Store Data and Display Task Report)
 
 Console chat app: registration and login (Part 1), sending / storing / disregarding
 messages (Part 2), and stored-message arrays, JSON storage, search, delete and
