@@ -1,8 +1,4 @@
-# ST10489452 - PROG5121 Part 3 (Store Data and Display Task Report)
-
-Console chat app: registration and login (Part 1), sending / storing / disregarding
-messages (Part 2), and stored-message arrays, JSON storage, search, delete and
-report features (Part 3).
+# ST10489452 - PROG5121 Part 3
 
 ## Project layout
 
@@ -18,28 +14,20 @@ report features (Part 3).
 
 ## Run
 
-    mvn test                                # run the unit tests
+    mvn test                              # run the unit tests
     mvn compile exec:java -Dexec.mainClass=com.mycompany.main.Main   # run the app
     # or run Main.java from NetBeans / IntelliJ
 
 ## The arrays (no hard-coding)
 
-`MessageManager` holds `sentMessages`, `disregardedMessages`, `storedMessages`,
-`messageHashes` and `messageIDs`, plus parallel arrays for sender, recipient, text
-and flag. Index *i* of every master array is the same message. Arrays are filled
-only while the app runs (Send / Disregard / Store) and by reading `messages.json`
-at start-up. Deleting removes the message from every array at once.
+MessageManager includes sentMessages, disregardedMessages, storedMessages, messageHashes, and messageIDs together with separate arrays for sender, recipient, text, and flag. Index i of each of these main arrays is the same message. These arrays will be populated only while the program is running (Send/Disregard/Store) or when reading messages.json during start-up. Deletion deletes the message from all arrays simultaneously.
 
 ## Assumptions about the test data
+The brief does not include Messages 4 and 5 in its test data table, so they had to be extracted from the unit-test table:
 
-The brief does not show Messages 4 and 5 in its test-data table, so they were taken
-from the unit-test table:
-
-* Message 4 - recipient `0838884567`, "It is dinner time!", Sent
-* Message 5 - recipient `+27838884567`, "Ok, I am leaving without you.", Stored
-
-The delete confirmation drops the final full stop of the message so the output
-matches the wording in the brief exactly.
+Message 4 – recipient 0838884567, "It is dinner time!", Sent
+Message 5 – recipient +27838884567, "Ok, I am leaving without you.", Stored
+Deletion confirmation deletes the last full stop in the message so that the output is identical to the one given in the brief.
 
 ## References (attribution)
 
